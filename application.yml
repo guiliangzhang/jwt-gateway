@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    service-a:
+      path: /service-a/**
+      url: http://service-a.jc89-internal
+    service-b:
+      path: /service-b/**
+      url: http://service-b.jc89-internal

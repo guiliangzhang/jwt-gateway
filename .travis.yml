@@ -1,0 +1,10 @@
+sudo: required
+
+language: c
+
+services:
+  - docker
+
+script:
+  - ./gradlew clean build
+  - docker build . -t jwt-gateway
