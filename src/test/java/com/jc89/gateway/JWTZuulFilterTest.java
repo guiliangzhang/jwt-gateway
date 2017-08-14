@@ -64,11 +64,9 @@ public class JWTZuulFilterTest {
     public final void testShouldNotDoAnythingOnValidToken() {
         when(request.getHeader(HEADER)).thenReturn(VALID_TOKEN);
         context.setResponse(response);
-        context.set("sendZuulResponse", true);
 
         filter.run();
 
-        assertThat(context.getBoolean("sendZuulResponse")).isTrue();
         assertThat(context.getResponseStatusCode()).isNotEqualTo(HttpStatus.SC_UNAUTHORIZED);
     }
 
