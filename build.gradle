@@ -41,3 +41,5 @@ dependencyManagement {
 	}
 }
 
+sourceSets.main.output.classesDir = new File(buildDir, "classes/main")
+
