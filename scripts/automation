@@ -2,6 +2,5 @@
 set -e
 
 ./gradlew clean build
-docker build . -t $DOCKER_USERNAME/jwt-gateway
-docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-docker push $DOCKER_USERNAME/jwt-gateway
+
+docker build . -t jwt-gateway
