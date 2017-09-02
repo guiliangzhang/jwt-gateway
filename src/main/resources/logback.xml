@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <if condition='property("console_logging_encoder").contains("json")'>
+            <then>
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+            </then>
+            <else>
+                <encoder>
+                    <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+                    <charset>utf8</charset>
+                </encoder>
+            </else>
+        </if>
+    </appender>
+    <if condition='isDefined("TCP_LOGGING_DESTINATION")'>
+        <then>
+            <appender name="tcp-logging" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>${TCP_LOGGING_DESTINATION}</destination>
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+            </appender>
+            <root level="INFO">
+                <appender-ref ref="tcp-logging" />
+            </root>
+        </then>
+    </if>
+    <root level="INFO">
+        <appender-ref ref="stdout" />
+    </root>
+</configuration>
