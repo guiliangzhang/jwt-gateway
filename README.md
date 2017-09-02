@@ -44,7 +44,7 @@ docker run \
 
 You can send your logs to a tcp destination by setting the `host:port` into the `TCP_LOGGING_DESTINATION` env variable.
 
-Assuming `docker-compose up` for [this](https://github.com/jc89/docker-elk) succeeded
+Assuming `docker-compose up` for [this](https://github.com/jc89/docker-elk) succeeded, kibana is up and [this](https://github.com/jc89/docker-elk#on-the-command-line) was executed
 
 ```
 export LOGSTASH_NETWORK=$(docker inspect --format='{{range $p, $conf := .NetworkSettings.Networks}}{{$p}}{{end}}' elk_logstash)
