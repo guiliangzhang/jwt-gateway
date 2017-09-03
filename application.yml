@@ -2,7 +2,7 @@ zuul:
   routes:
     service-a:
       path: /service-a/**
-      url: http://service-a.jc89-internal
+      url: http://service-a:1200
     service-b:
       path: /service-b/**
-      url: http://service-b.jc89-internal
+      url: http://service-b:1200
