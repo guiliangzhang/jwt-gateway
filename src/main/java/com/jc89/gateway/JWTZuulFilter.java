@@ -43,7 +43,6 @@ public class JWTZuulFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        logger.info("Got request {}", request.getRequestURI());
         try {
             String token = MoreObjects.firstNonNull(request.getHeader(header), "");
             DecodedJWT decodedJWT = jwtVerifier.verify(token);
