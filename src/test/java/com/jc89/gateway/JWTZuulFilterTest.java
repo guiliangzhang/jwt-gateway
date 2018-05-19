@@ -29,7 +29,7 @@ import static org.mockito.Mockito.when;
 public class JWTZuulFilterTest {
 
     private static final String HEADER = "header";
-    private static final String VALID_TOKEN= "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRHNvZSIsImFkbWluIjp0cnVlLCJpc3MiOiJqb2VsIn0.Eac42zNJZ5v_wxAk4-uxM_h6F6rO6rljBTbZpAVz02RwCHo8rAmSe8AqV_og1fVie_dL1MKwK2T4byX56x43RH3DbH5vjJH6HquzJMxIhZ_zP5bUM-yhK6ycMY3QHH4g_UukVYFGDrlPt2dNIv11zB_o44R3A8SQCEL1hlsOUKyHaPffPRV5m6zUZ9Zmu2iGN_HA-VUVDkhdZ99rxTNoOd8nof3k3v_TPouO765LAz8iYhl1SERwGOPp8bDrjPq32FO9AAm5LQN6Z4Uzxf3v7Cwz6_z2oslJx0pNv_r-_5woUVUFU6zaIWr557-wO63H7IozDNONBRm7S7pqgMV2_NNxuejum2kV9mzXuZd0U3owQ5E7qcxBIXLWaO2wh9783G5H5-geXO7HF_3f2QETqHDm1vSjlHYhh9JdWOwueSae-jkEZArmZ_P6B-G0XLYlsQcfB0FzLfaURXlpAJkgimfAiv8fAmvbtRabakEGv8GRvsda0P_8OhkACycsQE6GNWQ95j_eA0sT5FSmjwdjvjLxFifMwi-Y1a9P49v_ruXiv0oXg9t_TvtR1_HFWTcj7fpZwjbT7yuW0gK4_gu1Qqc4VQW49asrK8mOz2g8Bz9Ruv29_KbgSKShRUmV_2Tdx8nAw2WxSs2IQKG5Gk2omNPbqGjss9rEsYCDVpNjgCY";
+    private static final String VALID_TOKEN = "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRHNvZSIsImFkbWluIjp0cnVlLCJpc3MiOiJsb2wifQ.C8LCKIkPneqvfSt6rqpxrWUHAyCEyoe-irhIwcPrWwGcFjg-imBNP1Z524j1faxu0W3SPm4Fsb5UfPAzDdyLnMMyjQ5nMsqcf1bFgAWMiKCu_qTBK_gwE-ninhTo99HTorxhBo9f98dheSrCg59IrPWv4P-AM24GE3v94RBWqW8pg8cH9SnxMBfmo3711wvRfYKecBm3AgpxTvlzrO35U1NpaAGV4jYl43MooBlRm7D9KQ3iMFhCmWDGF_FLymM_CjcsVr4c8aYxfEJwkpUoj7E7ei1XuKa6noWyQgOEbWJHtZmw4RA1zTy6clP7Pioxk6UoQidFXIZgGcdldZoCZNPd87xiegFMQeVn4UimQ8MuLQqaIofw6goOpyrTeZm3n85t_dffLYHGPcty84YoaeTcH4pzlOk6vZQDXMo1z7XMXD8GOhkjEmgX0Q4HUvzbDTvq_GrzPg4HmbZQ3tVWyEYvyjdNw5hVIz60ORdXcwb5cuqDANn8gEZMZCkVILIpzsBBmA82jd8ai4LMBBMpLgTLg3LbsUj5zOJ_Ydh5YeoAqWlcq0pnwtZybH9zLPD8ZpJSaZnGatF2zw6PWtqwfeIBs21IlAlILJPCAqrcTtOUjbrcJ8hK6vI6Jbq5Zn4Ctsr-rC-dbFPvPoWaiQtqB5ED0gR9L3ZCJL0NooZO9lU";
 
     @Mock
     HttpServletRequest request;
@@ -51,7 +51,7 @@ public class JWTZuulFilterTest {
 
         jwtVerifier = JWT
                 .require(Algorithm.RSA512(publicKey, null))
-                .withIssuer("joel")
+                .withIssuer("lol")
                 .build();
         context = new RequestContext();
         context.setRequest(request);

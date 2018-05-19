@@ -22,7 +22,7 @@ public class JWTZuulFilter extends ZuulFilter {
 
     public JWTZuulFilter(List<JWTVerifier> jwtVerifiers, String header) {
         Preconditions.checkArgument(!jwtVerifiers.isEmpty());
-        
+
         this.jwtVerifiers = jwtVerifiers;
         this.header = header;
     }
